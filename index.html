@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+🟨🟨🟨🟨🟨🟨⬛🟨🟨🟨⬛🟨🟨🟨🟨🟨🟨
+🟨🟨🟨🟨🟨⬛🟨🟨🟨🟨🟨⬛🟨🟨🟨🟨🟨
+🟨🟨⬛⬛⬛🟨🟨🟨🟨🟨🟨🟨⬛⬛⬛🟨🟨
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+🟨🟨⬛⬛⬛🟨🟨🟨🟨🟨🟨🟨⬛⬛⬛🟨🟨
+🟨⬛⬜⬜⬛⬛🟨🟨🟨🟨🟨⬛⬜⬜⬛⬛🟨
+⬛⬜⬜⬜⬛⬛⬛🟨🟨🟨⬛⬜⬜⬜⬛⬛⬛
+⬛⬜⬜⬛⬛⬛⬛🟨🟨🟨⬛⬜⬜⬛⬛⬛⬛
+⬛⬛⬛⬛⬛⬜⬛🟨🟨🟨⬛⬛⬛⬛⬛⬜⬛
+🟨⬛⬛⬜⬜⬛🟨🟨🟨🟨🟨⬛⬛⬜⬜⬛🟨
+🟨🟨⬛⬛⬛🟨🟨🟨🟨🟨🟨🟨⬛⬛⬛🟨🟨
+🟨🟨🟨🟨🟨🟨🟨⬛⬛⬛🟨🟨🟨🟨🟨🟨🟨
+🟨🟨🟨🟨🟨🟨⬛🟨🟨🟨⬛🟨🟨🟨🟨🟨🟨
+🟨🟨🟨🟨🟨🟨⬛🟨🟨🟨⬛🟨🟨🟨🟨🟨🟨
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+-->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>ぷゆゆの部屋</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      const assetVersion = Date.now().toString();
+
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = `./styles.css?v=${assetVersion}`;
+      document.head.append(stylesheet);
+
+      const runtimeScript = document.createElement("script");
+      runtimeScript.src = `./script.js?v=${assetVersion}`;
+      runtimeScript.defer = true;
+      document.head.append(runtimeScript);
+    </script>
+  </head>
+  <body>
+    <main class="scene">
+      <div class="room-darkness" id="roomDarkness" aria-hidden="true"></div>
+      <div class="visitor-layer" id="visitorLayer" aria-hidden="true">
+        <div class="visitor" id="visitor">
+          <span class="visitor-native" aria-hidden="true">🫪</span>
+          <span class="visitor-fallback" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <button
+        class="sound-toggle is-off"
+        id="soundToggle"
+        type="button"
+        aria-label="音声をオンにする"
+        aria-pressed="false"
+      >
+        <span class="sound-toggle-icon" aria-hidden="true">🔇</span>
+      </button>
+
+      <button
+        class="light-toggle is-on"
+        id="lightToggle"
+        type="button"
+        aria-label="部屋の電気を消す"
+        aria-pressed="true"
+      >
+        <span class="light-toggle-icon" aria-hidden="true">💡</span>
+      </button>
+
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <section class="puyuyu-stage" aria-label="ぷゆゆ">
+        <div class="bubble-wrap" aria-live="polite">
+          <div class="speech-bubble" id="speechBubble">
+            <p id="speechText">うーん…</p>
+          </div>
+        </div>
+
+        <button
+          class="puyuyu"
+          id="puyuyu"
+          type="button"
+          aria-label="ぷゆゆにしゃべってもらう"
+          style="display: none;"
+        >
+          <span class="puyuyu-shadow"></span>
+          <span class="puyuyu-face" aria-hidden="true">🥺</span>
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
